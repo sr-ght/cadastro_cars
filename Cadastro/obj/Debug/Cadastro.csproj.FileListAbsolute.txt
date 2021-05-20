@@ -1,0 +1,11 @@
+C:\Users\Vespertino\source\repos\Cadastro\Cadastro\bin\Debug\Cadastro.exe.config
+C:\Users\Vespertino\source\repos\Cadastro\Cadastro\bin\Debug\Cadastro.exe
+C:\Users\Vespertino\source\repos\Cadastro\Cadastro\bin\Debug\Cadastro.pdb
+C:\Users\Vespertino\source\repos\Cadastro\Cadastro\obj\Debug\Cadastro.csprojAssemblyReference.cache
+C:\Users\Vespertino\source\repos\Cadastro\Cadastro\obj\Debug\Cadastro.Form1.resources
+C:\Users\Vespertino\source\repos\Cadastro\Cadastro\obj\Debug\Cadastro.Properties.Resources.resources
+C:\Users\Vespertino\source\repos\Cadastro\Cadastro\obj\Debug\Cadastro.csproj.GenerateResource.cache
+C:\Users\Vespertino\source\repos\Cadastro\Cadastro\obj\Debug\Cadastro.csproj.CoreCompileInputs.cache
+C:\Users\Vespertino\source\repos\Cadastro\Cadastro\obj\Debug\Cadastro.exe
+C:\Users\Vespertino\source\repos\Cadastro\Cadastro\obj\Debug\Cadastro.pdb
+C:\Users\Vespertino\source\repos\Cadastro\Cadastro\obj\Debug\Cadastro.Form2.resources
