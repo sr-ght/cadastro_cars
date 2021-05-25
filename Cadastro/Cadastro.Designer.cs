@@ -1,7 +1,7 @@
 ﻿
 namespace Cadastro
 {
-    partial class Form2
+    partial class Cadastro
     {
         /// <summary>
         /// Required designer variable.
@@ -178,7 +178,6 @@ namespace Cadastro
             this.comboMarc.Name = "comboMarc";
             this.comboMarc.Size = new System.Drawing.Size(217, 21);
             this.comboMarc.TabIndex = 28;
-            this.comboMarc.SelectedIndexChanged += new System.EventHandler(this.comboMarc_SelectedIndexChanged);
             this.comboMarc.SelectedValueChanged += new System.EventHandler(this.comboMarc_SelectedValueChanged);
             // 
             // label3
@@ -269,7 +268,7 @@ namespace Cadastro
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(8, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(180, 20);
             this.label2.TabIndex = 17;
@@ -323,8 +322,9 @@ namespace Cadastro
             this.button1.TabIndex = 27;
             this.button1.Text = "CANCELAR";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form2
+            // Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -335,8 +335,10 @@ namespace Cadastro
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form2";
-            this.Text = "Cadastro de Veículos";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "Cadastro";
+            this.Text = "Veículo | Cadastro";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

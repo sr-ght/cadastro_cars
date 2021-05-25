@@ -11,17 +11,13 @@ using System.Windows.Forms;
 
 namespace Cadastro
 {
-    public partial class Form2 : Form
+    public partial class Cadastro : Form
     {
-        public Form2()
+        public Cadastro()
         {
             InitializeComponent();
         }
 
-        private void comboMarc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
 
         private void comboMarc_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -70,6 +66,7 @@ namespace Cadastro
         private void concluir_Click(object sender, EventArgs e)
         {
             SqlConnection conect;
+            //mudar para o endereço no seu pc
             conect = new SqlConnection(@"Data Source=DESKTOP-J2QA716\SQLEXPRESS;Initial Catalog=Veiculo;Integrated Security=True");
 
             conect.Open();
@@ -80,7 +77,7 @@ namespace Cadastro
                 "', '" + comboCor.Text + "', '" + boxObs.Text + "','" + maskedCpf.Text + "')", conect);
 
             int res = cliente.ExecuteNonQuery();
-            if (res == 1)
+            if (res >= 1)
             {
                 MessageBox.Show("Cadastrado com sucesso!");
                 boxName.Clear();
@@ -98,6 +95,11 @@ namespace Cadastro
                 MessageBox.Show("Erro!");
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

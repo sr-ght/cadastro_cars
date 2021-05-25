@@ -11,17 +11,23 @@ using System.Windows.Forms;
 
 namespace Cadastro
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
-        public Form1()
+        public Home()
         {
             InitializeComponent();
         }
 
         private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            Cadastro form2 = new Cadastro();
             form2.ShowDialog();
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consulta form3 = new Consulta();
+            form3.ShowDialog();
         }
     }
 }
