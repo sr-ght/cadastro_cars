@@ -38,10 +38,11 @@ namespace Cadastro
                     boxCpf.Text = res[1].ToString();
                     boxEnd.Text = res[2].ToString();
                     boxPlaca.Text = res[3].ToString();
-                    boxMarc.Text = res[4].ToString();
-                    boxModel.Text = res[5].ToString();
-                    boxCor.Text = res[6].ToString();
-                    boxObs.Text = res[7].ToString();
+                    boxMarc.Text = res[5].ToString();
+                    boxModel.Text = res[6].ToString();
+                    boxCor.Text = res[7].ToString();
+                    boxObs.Text = res[8].ToString();
+
                 }
                 else
                 {
@@ -79,20 +80,7 @@ namespace Cadastro
 
         private void Consulta_Load(object sender, EventArgs e)
         {
-            /*labelDC.Visible = false;
-            labelNome.Visible = false;
-            boxName.Visible = false;
-            labelCpf.Visible = false;
-            boxCpf.Visible = false;
-            labelEnd.Visible = false;
-            boxEnd.Visible = false;
-            labelDV.Visible = false;
-            labelPlaca.Visible = false;
-            boxPlaca.Visible = false;
-            labelMarc.Visible = false;
-            boxMarc.Visible = false;
-            labelModel.Visible = false;*/
-
+            
             buscaPlaca.Visible = false;
             buscaName.Visible = false;
             groupBusca.Visible = false;
@@ -110,6 +98,37 @@ namespace Cadastro
                 buscaName.Visible = true;
                 buscaPlaca.Visible = false;
             }
+        }
+
+        private void excluir_Click(object sender, EventArgs e)
+        {
+            SqlConnection conect;
+            //mudar para o endereço no seu pc
+            conect = new SqlConnection(@"Data Source=DESKTOP-J2QA716\SQLEXPRESS;Initial Catalog=Veiculo;Integrated Security=True");
+
+            conect.Open();
+            var result = MessageBox.Show(this, "Tem certeza que deseja excluir?",
+                                   "Alerta", MessageBoxButtons.YesNo,
+                                   MessageBoxIcon.Warning);
+
+            if(result == DialogResult.Yes)
+            {
+                SqlCommand excluir = new SqlCommand("delete from carro where placa='" + buscaPlaca.Text + "'", conect);
+
+                int res = excluir.ExecuteNonQuery();
+                if(res == 1)
+                {
+                    MessageBox.Show("Excluido!");
+                }
+                else
+                {
+                    MessageBox.Show("Algo deu errado!");
+                }
+                
+            }
+
+            conect.Close();
+
         }
     }
 }

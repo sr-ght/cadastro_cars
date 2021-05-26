@@ -71,10 +71,12 @@ namespace Cadastro
 
             conect.Open();
 
-            SqlCommand cliente = new SqlCommand("insert into cliente values('" +
-                boxName.Text + "','" + maskedCpf.Text + "','" + boxEnd.Text + "') insert into carro values('" + 
+            SqlCommand cliente = new SqlCommand("insert into carro values('" +
                 maskedPlaca.Text + "', '" + comboMarc.Text + "', '" + comboModel.Text +
-                "', '" + comboCor.Text + "', '" + boxObs.Text + "','" + maskedCpf.Text + "')", conect);
+                "', '" + comboCor.Text + "', '" + boxObs.Text +
+                "') insert into cliente values('" + boxName.Text + "', '" + maskedCpf.Text + "', '" + boxEnd.Text +
+                "','"+ maskedPlaca.Text +"')", conect);
+
 
             int res = cliente.ExecuteNonQuery();
             if (res >= 1)
@@ -84,9 +86,9 @@ namespace Cadastro
                 maskedCpf.Clear();
                 boxEnd.Clear();
                 maskedPlaca.Clear();
-                comboMarc.SelectedItem.Equals("");
-                comboModel.SelectedItem.Equals("");
-                comboCor.SelectedItem.Equals("");
+                comboMarc.Items.Clear();
+                comboModel.Items.Clear();
+                comboCor.Items.Clear();
                 boxObs.Text = "";
 
             }
@@ -94,6 +96,8 @@ namespace Cadastro
             {
                 MessageBox.Show("Erro!");
             }
+
+            conect.Close();
 
         }
 
