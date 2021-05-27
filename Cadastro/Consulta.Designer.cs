@@ -33,6 +33,7 @@ namespace Cadastro
             this.comboBusca = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBusca = new System.Windows.Forms.GroupBox();
+            this.excluir = new System.Windows.Forms.Button();
             this.boxCor = new System.Windows.Forms.TextBox();
             this.boxModel = new System.Windows.Forms.TextBox();
             this.boxMarc = new System.Windows.Forms.TextBox();
@@ -54,7 +55,8 @@ namespace Cadastro
             this.label10 = new System.Windows.Forms.Label();
             this.buscaPlaca = new System.Windows.Forms.MaskedTextBox();
             this.buscaName = new System.Windows.Forms.TextBox();
-            this.excluir = new System.Windows.Forms.Button();
+            this.editar = new System.Windows.Forms.Button();
+            this.habilitar = new System.Windows.Forms.CheckBox();
             this.groupBusca.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,6 +102,8 @@ namespace Cadastro
             // groupBusca
             // 
             this.groupBusca.BackColor = System.Drawing.Color.White;
+            this.groupBusca.Controls.Add(this.habilitar);
+            this.groupBusca.Controls.Add(this.editar);
             this.groupBusca.Controls.Add(this.excluir);
             this.groupBusca.Controls.Add(this.boxCor);
             this.groupBusca.Controls.Add(this.boxModel);
@@ -121,9 +125,24 @@ namespace Cadastro
             this.groupBusca.Controls.Add(this.labelPlaca);
             this.groupBusca.Location = new System.Drawing.Point(12, 101);
             this.groupBusca.Name = "groupBusca";
-            this.groupBusca.Size = new System.Drawing.Size(340, 337);
+            this.groupBusca.Size = new System.Drawing.Size(340, 372);
             this.groupBusca.TabIndex = 3;
             this.groupBusca.TabStop = false;
+            // 
+            // excluir
+            // 
+            this.excluir.BackColor = System.Drawing.Color.Red;
+            this.excluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.excluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.excluir.ForeColor = System.Drawing.Color.White;
+            this.excluir.Location = new System.Drawing.Point(243, 335);
+            this.excluir.Name = "excluir";
+            this.excluir.Size = new System.Drawing.Size(74, 21);
+            this.excluir.TabIndex = 61;
+            this.excluir.Text = "EXCLUIR";
+            this.excluir.UseVisualStyleBackColor = false;
+            this.excluir.Click += new System.EventHandler(this.excluir_Click);
             // 
             // boxCor
             // 
@@ -321,27 +340,40 @@ namespace Cadastro
             this.buscaName.Size = new System.Drawing.Size(217, 20);
             this.buscaName.TabIndex = 59;
             // 
-            // excluir
+            // editar
             // 
-            this.excluir.BackColor = System.Drawing.Color.Red;
-            this.excluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.excluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.excluir.ForeColor = System.Drawing.Color.White;
-            this.excluir.Location = new System.Drawing.Point(243, 305);
-            this.excluir.Name = "excluir";
-            this.excluir.Size = new System.Drawing.Size(74, 21);
-            this.excluir.TabIndex = 61;
-            this.excluir.Text = "EXCLUIR";
-            this.excluir.UseVisualStyleBackColor = false;
-            this.excluir.Click += new System.EventHandler(this.excluir_Click);
+            this.editar.BackColor = System.Drawing.Color.SkyBlue;
+            this.editar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editar.ForeColor = System.Drawing.Color.White;
+            this.editar.Location = new System.Drawing.Point(21, 335);
+            this.editar.Name = "editar";
+            this.editar.Size = new System.Drawing.Size(74, 21);
+            this.editar.TabIndex = 62;
+            this.editar.Text = "EDITAR";
+            this.editar.UseVisualStyleBackColor = false;
+            this.editar.Click += new System.EventHandler(this.editar_Click);
+            // 
+            // habilitar
+            // 
+            this.habilitar.AutoSize = true;
+            this.habilitar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.habilitar.Location = new System.Drawing.Point(21, 312);
+            this.habilitar.Name = "habilitar";
+            this.habilitar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.habilitar.Size = new System.Drawing.Size(99, 17);
+            this.habilitar.TabIndex = 63;
+            this.habilitar.Text = "Habilitar edição";
+            this.habilitar.UseVisualStyleBackColor = true;
+            this.habilitar.CheckedChanged += new System.EventHandler(this.habilitar_CheckedChanged);
             // 
             // Consulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(365, 450);
+            this.ClientSize = new System.Drawing.Size(365, 485);
             this.Controls.Add(this.buscaName);
             this.Controls.Add(this.buscaPlaca);
             this.Controls.Add(this.label10);
@@ -389,5 +421,7 @@ namespace Cadastro
         private System.Windows.Forms.MaskedTextBox buscaPlaca;
         private System.Windows.Forms.TextBox buscaName;
         private System.Windows.Forms.Button excluir;
+        private System.Windows.Forms.Button editar;
+        private System.Windows.Forms.CheckBox habilitar;
     }
 }
